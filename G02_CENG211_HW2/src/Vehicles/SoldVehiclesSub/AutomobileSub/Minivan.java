@@ -28,7 +28,29 @@ private String numberOfSeats;
 		return numberOfSeats;
 	}
 	
-//toString
+	// Methods
+	private double getSctValueFromNumberOfSeats(String seat) {
+		int intSeat = Integer.parseInt(seat);
+		switch (intSeat) {
+		case 4:
+			return 0.1;
+		case 5:
+			return 0.4;
+		case 6:
+			return 0.6;
+		case 7:
+			return 0.8;
+		default:
+			return -1;
+		}
+	}
+	
+	@Override
+		public double calculateSCT() {
+			return (0.6 * getSctValueFromProductionYear(getProductionYear())) / (Double.parseDouble(getEngineVolume()) + getSctValueFromNumberOfSeats(getNumberOfSeats()));
+		}
+	
+	// toString
 	@Override
 	public String toString() {
 		return "Automobile [ vehicleID = " + getVehicleID()

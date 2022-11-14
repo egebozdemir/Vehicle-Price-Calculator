@@ -28,7 +28,24 @@ public class Hatchback extends Automobile {
 		return cityMode;
 	}
 	
-//toString
+	// Methods
+	private double getSctValueFromCityMode(String mode) {
+		switch (mode) {
+		case "yes":
+			return 0.15;
+		case "no":
+			return 0.1;
+		default:
+			return -1;
+		}
+	}
+	
+	@Override
+	public double calculateSCT() {
+		return (Double.parseDouble(getEngineVolume()) * 0.3 * getSctValueFromProductionYear(getProductionYear())) + getSctValueFromCityMode(getCityMode());
+	}
+	
+  //toString
 	@Override
 	public String toString() {
 		return "Automobile [ vehicleID = " + getVehicleID()

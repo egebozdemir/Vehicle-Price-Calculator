@@ -5,6 +5,7 @@ import Vehicles.*;
 public class Automobile extends SoldVehicles {
 	private String engineVolume;
 	private String vat;
+	private final int basePrice = 200000;
 	
 	/* Constructors */
 	//Empty
@@ -33,6 +34,10 @@ public class Automobile extends SoldVehicles {
 
 	public String getVat() {
 		return vat;
+	}
+	
+	public int getBasePrice() {
+		return basePrice;
 	}
 
   // toString

@@ -28,7 +28,26 @@ private String roofType;
 		return roofType;
 	}
 	
-//toString
+	// Methods
+	private double getSctValueFromRoofType(String roof) {
+		switch (roof) {
+		case "Regular":
+			return 0.5;
+		case "Moonroof":
+			return 0.6;
+		case "Sunroof":
+			return 0.8;
+		default:
+			return -1;
+		}
+	}
+	
+	@Override
+		public double calculateSCT() {
+			return (Double.parseDouble(getEngineVolume()) * 0.2 * getSctValueFromRoofType(getRoofType())) / getSctValueFromProductionYear(getProductionYear());
+		}
+	
+	//toString
 	@Override
 	public String toString() {
 		return "Automobile [ vehicleID = " + getVehicleID()

@@ -6,6 +6,7 @@ public class Bicycle extends SoldVehicles {
 	private String chainType;
 	private String seatPost;
 	private String vat;
+	private final int basePrice = 10000;
 	
 	/* Constructors */
 	//Empty
@@ -40,6 +41,44 @@ public class Bicycle extends SoldVehicles {
 
 	public String getVat() {
 		return vat;
+	}
+	
+	public int getBasePrice() {
+		return basePrice;
+	}
+	
+	// Methods
+	private double getSctValueFromChainType(String chain) {
+		switch (chain) {
+		case "derailleur":
+			return 1.1;
+		case "onechain":
+			return 1.2;
+		case "doublechain":
+			return 1.3;
+		default:
+			return -1;
+		}
+	}
+	
+	private double getSctValueFromSeatPost(String seat) {
+		switch (seat) {
+		case "carbonfiber":
+			return 0.8;
+		case "steel":
+			return 0.7;
+		case "aluminum":
+			return 0.9;
+		case "titanium":
+			return 0.6;
+		default:
+			return -1;
+		}
+	}
+	
+	@Override
+	public double calculateSCT() {
+		return (getSctValueFromChainType(getChainType()) * getSctValueFromSeatPost(getSeatPost()) * 0.1) + getSctValueFromMonthOfSale(getMonthOfSale());
 	}
 
 	// toString
