@@ -1,4 +1,4 @@
-package FiloIO;
+package FileIO;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,13 +19,13 @@ public class FileIO {
 		ArrayList<SoldVehicles> vehicleArrayList = new ArrayList<>();
 		String line = null;
 		while ((line = reader.readLine()) != null) {
-			vehicleArrayList.add(createVehiceFromCsv(line));
+			vehicleArrayList.add(createVehicleFromCsv(line));
 		}
 		return vehicleArrayList;
 	}
 	
 	/* Object creation from csv lines */	
-	private static SoldVehicles createVehiceFromCsv(String csvLine) {
+	private static SoldVehicles createVehicleFromCsv(String csvLine) {
 		StringTokenizer tokenizer = new StringTokenizer(csvLine, ",");
 		switch (csvLine.charAt(0)) {
 			case 'B':

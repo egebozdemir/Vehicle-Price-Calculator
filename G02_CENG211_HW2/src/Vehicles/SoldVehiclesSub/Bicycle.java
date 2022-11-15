@@ -6,7 +6,7 @@ public class Bicycle extends SoldVehicles {
 	private String chainType;
 	private String seatPost;
 	private String vat;
-	private final int basePrice = 10000;
+	private final int BASE_PRICE = 10000;
 	
 	/* Constructors */
 	//Empty
@@ -44,7 +44,7 @@ public class Bicycle extends SoldVehicles {
 	}
 	
 	public int getBasePrice() {
-		return basePrice;
+		return BASE_PRICE;
 	}
 	
 	// Methods
@@ -83,7 +83,7 @@ public class Bicycle extends SoldVehicles {
 	
 	@Override
 	public double calculateTotalPrice() {
-		return (basePrice * 0.9) * (1 + calculateSCT()) + (1 + Double.parseDouble(getVat()) / 100);
+		return (BASE_PRICE * 0.9) * (1 + calculateSCT()) + (1 + Double.parseDouble(getVat()) / 100);
 	}
 
 	// toString

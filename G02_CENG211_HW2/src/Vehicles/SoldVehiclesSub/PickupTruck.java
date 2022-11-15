@@ -6,7 +6,7 @@ public class PickupTruck extends SoldVehicles {
 	private String capType;
 	private String truckBedType;
 	private String vat;
-	private final int basePrice = 250000;
+	private final int BASE_PRICE = 250000;
 	
 	/* Constructors */
 	//Empty
@@ -44,7 +44,7 @@ public class PickupTruck extends SoldVehicles {
 	}
 	
 	public int getBasePrice() {
-		return basePrice;
+		return BASE_PRICE;
 	}
 	
   // Methods
@@ -81,7 +81,7 @@ public class PickupTruck extends SoldVehicles {
 	
 	@Override
 	public double calculateTotalPrice() {
-		return (basePrice) * (1 + calculateSCT() * 0.6) + (1 + Double.parseDouble(getVat()) / 100);
+		return (BASE_PRICE) * (1 + calculateSCT() * 0.6) + (1 + Double.parseDouble(getVat()) / 100);
 	}
 
 	// toString

@@ -5,7 +5,7 @@ import Vehicles.*;
 public class Automobile extends SoldVehicles {
 	private String engineVolume;
 	private String vat;
-	private final int basePrice = 200000;
+	private final int BASE_PRICE = 200000;
 	
 	/* Constructors */
 	//Empty
@@ -37,13 +37,13 @@ public class Automobile extends SoldVehicles {
 	}
 	
 	public int getBasePrice() {
-		return basePrice;
+		return BASE_PRICE;
 	}
 	
 	// Methods 
 	@Override
 	public double calculateTotalPrice() {
-		return (basePrice) * (1 + calculateSCT() * 0.8) + (1 + Double.parseDouble(getVat()) / 100);
+		return (BASE_PRICE) * (1 + calculateSCT() * 0.8) + (1 + Double.parseDouble(getVat()) / 100);
 	}
 
   // toString
