@@ -31,11 +31,11 @@ private String roofType;
 	// Methods
 	private double getSctValueFromRoofType(String roof) {
 		switch (roof) {
-		case "Regular":
+		case "regular":
 			return 0.5;
-		case "Moonroof":
+		case "moonroof":
 			return 0.6;
-		case "Sunroof":
+		case "sunroof":
 			return 0.8;
 		default:
 			return -1;
@@ -50,8 +50,6 @@ private String roofType;
 	//toString
 	@Override
 	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", roofType = " + roofType + ", engineVolume = " + getEngineVolume() + ", vat = " + getVat() + " ]";
+		return "Vehicle: Sedan, " + super.toString();
 	}
 }

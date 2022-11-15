@@ -53,8 +53,6 @@ private String numberOfSeats;
 	// toString
 	@Override
 	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", numberOfSeats = " + numberOfSeats + ", engineVolume = " + getEngineVolume() + ", vat = " + getVat() + " ]";
+		return "Vehicle: Minivan, " + super.toString();
 	}
 }

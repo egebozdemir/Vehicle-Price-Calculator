@@ -48,8 +48,6 @@ public class Hatchback extends Automobile {
   //toString
 	@Override
 	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", cityMode = " + cityMode + ", engineVolume = " + getEngineVolume() + ", vat = " + getVat() + " ]";
+		return "Vehicle: Hatchback, " + super.toString();
 	}
 }

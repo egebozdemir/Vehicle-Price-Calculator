@@ -3,7 +3,7 @@ package Vehicles.SoldVehiclesSub;
 import Vehicles.*;
 
 public class PickupTruck extends SoldVehicles {
-	private String capType;
+	private String cabType;
 	private String truckBedType;
 	private String vat;
 	private final int BASE_PRICE = 250000;
@@ -15,9 +15,9 @@ public class PickupTruck extends SoldVehicles {
 	}
 	
 	// Full
-	public PickupTruck(String vehicleID, String monthOfSale, String cityOfSale, String productionYear, String capType, String truckBedType, String vat) {
+	public PickupTruck(String vehicleID, String monthOfSale, String cityOfSale, String productionYear, String cabType, String truckBedType, String vat) {
 		super(vehicleID, monthOfSale, cityOfSale, productionYear);
-		this.capType = capType;
+		this.cabType = cabType;
 		this.truckBedType = truckBedType;
 		this.vat = vat;
 	}
@@ -25,14 +25,14 @@ public class PickupTruck extends SoldVehicles {
 	// Copy
 	public PickupTruck(PickupTruck pickupTruck) {
 		super(pickupTruck.getVehicleID(), pickupTruck.getMonthOfSale(), pickupTruck.getCityOfSale(), pickupTruck.getProductionYear());
-		this.capType = pickupTruck.getCapType();
+		this.cabType = pickupTruck.getCabType();
 		this.truckBedType = pickupTruck.getTruckBedType();
 		this.vat = pickupTruck.getVat();
 	}
 
 	// Getters
-	public String getCapType() {
-		return capType;
+	public String getCabType() {
+		return cabType;
 	}
 
 	public String getTruckBedType() {
@@ -76,7 +76,7 @@ public class PickupTruck extends SoldVehicles {
 	
 	@Override
 	public double calculateSCT() {
-		return (getSctValueFromTruckBedType(getTruckBedType()) * getSctValueFromProductionYear(getProductionYear())) / getSctValueFromCabType(getCapType());
+		return (getSctValueFromTruckBedType(getTruckBedType()) * getSctValueFromProductionYear(getProductionYear())) / getSctValueFromCabType(getCabType());
 	}
 	
 	@Override
@@ -87,8 +87,6 @@ public class PickupTruck extends SoldVehicles {
 	// toString
 	@Override
 	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", capType = " + capType + ", truckBedType = " + truckBedType + ", vat = " + vat + " ]";
+		return "Vehicle: Pickup Truck, " + super.toString();
 	}
 }

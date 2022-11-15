@@ -89,8 +89,6 @@ public class Bicycle extends SoldVehicles {
 	// toString
 	@Override
 	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", chainType = " + chainType + ", seatPosts = " + seatPost + ", vat = " + vat + " ]";
+		return "Vehicle: Bicycle, " + super.toString();
 	}
 }

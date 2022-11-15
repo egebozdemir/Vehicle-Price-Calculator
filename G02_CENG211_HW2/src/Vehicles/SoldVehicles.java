@@ -102,7 +102,8 @@ public class SoldVehicles {
 	// toString
 	@Override
 	public String toString() {
-		return "SoldVehicles [ vehicleID = " + vehicleID + ", monthOfSale = " + monthOfSale + ", cityOfSale = " + cityOfSale
-				+ ", productionYear = " + productionYear + " ]";
+		return  "Vehicle ID: " + vehicleID + ", Month: " + monthOfSale + ", City: " + cityOfSale
+				+ ", Production Year: " + productionYear + ", SCT: " + String.format("%.3f", calculateSCT()) + "\n" + 
+				"The total price paid for " + getVehicleID() + " : " + String.format("%,.2f", calculateTotalPrice()) + " TL\n\n";
 	}
 }

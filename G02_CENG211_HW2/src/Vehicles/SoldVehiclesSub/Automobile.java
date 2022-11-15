@@ -46,11 +46,5 @@ public class Automobile extends SoldVehicles {
 		return (BASE_PRICE) * (1 + calculateSCT() * 0.8) + (1 + Double.parseDouble(getVat()) / 100);
 	}
 
-  // toString
-	@Override
-	public String toString() {
-		return "Automobile [ vehicleID = " + getVehicleID()
-				+ ", monthOfSale = " + getMonthOfSale() + ", cityOfSale = " + getCityOfSale() + ", productionYear = "
-				+ getProductionYear() + ", engineVolume = " + engineVolume + ", vat = " + vat + " ]";
-	}
+  // toString method is not overriden here because it has no difference from its super.toString() method
 }
