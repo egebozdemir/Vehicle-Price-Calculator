@@ -80,6 +80,11 @@ public class Bicycle extends SoldVehicles {
 	public double calculateSCT() {
 		return (getSctValueFromChainType(getChainType()) * getSctValueFromSeatPost(getSeatPost()) * 0.1) + getSctValueFromMonthOfSale(getMonthOfSale());
 	}
+	
+	@Override
+	public double calculateTotalPrice() {
+		return (basePrice * 0.9) * (1 + calculateSCT()) + (1 + Double.parseDouble(getVat()) / 100);
+	}
 
 	// toString
 	@Override

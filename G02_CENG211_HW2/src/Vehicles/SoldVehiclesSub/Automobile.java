@@ -39,6 +39,12 @@ public class Automobile extends SoldVehicles {
 	public int getBasePrice() {
 		return basePrice;
 	}
+	
+	// Methods 
+	@Override
+	public double calculateTotalPrice() {
+		return (basePrice) * (1 + calculateSCT() * 0.8) + (1 + Double.parseDouble(getVat()) / 100);
+	}
 
   // toString
 	@Override

@@ -45,11 +45,12 @@ public class SoldVehicles {
 		return productionYear;
 	}
 	
+	// Methods
+	
 	public double calculateSCT() {
 		return 0;
 	}
 	
-	// Methods
 	protected double getSctValueFromMonthOfSale(String month) {
 		switch (month) {
 		case "January":
@@ -92,6 +93,10 @@ public class SoldVehicles {
 		default:
 			return -1;
 		}
+	}
+	
+	public double calculateTotalPrice() {
+		return 0;
 	}
  
 	// toString

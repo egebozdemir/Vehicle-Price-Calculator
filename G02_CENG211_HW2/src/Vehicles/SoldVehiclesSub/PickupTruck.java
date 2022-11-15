@@ -78,6 +78,11 @@ public class PickupTruck extends SoldVehicles {
 	public double calculateSCT() {
 		return (getSctValueFromTruckBedType(getTruckBedType()) * getSctValueFromProductionYear(getProductionYear())) / getSctValueFromCabType(getCapType());
 	}
+	
+	@Override
+	public double calculateTotalPrice() {
+		return (basePrice) * (1 + calculateSCT() * 0.6) + (1 + Double.parseDouble(getVat()) / 100);
+	}
 
 	// toString
 	@Override
